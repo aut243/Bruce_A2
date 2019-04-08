@@ -145,6 +145,10 @@
 			isa = PBXBuildFile;
 			fileRef = 6265C11ADEEC7C79D53BEED1;
 		};
+		F7FE3ED8C58E0FA40D3038B7 = {
+			isa = PBXBuildFile;
+			fileRef = DA1ED153E7126C0170B15E77;
+		};
 		909A0CB14D060D60938DD32B = {
 			isa = PBXBuildFile;
 			fileRef = F46617D931D193E58315B2EF;
@@ -171,6 +175,13 @@
 			name = PluginEditor.h;
 			path = ../../Source/PluginEditor.h;
 			sourceTree = "SOURCE_ROOT";
+		};
+		0B8F62A4FA3D906D8896E646 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_dsp";
+			path = "/Users/autumn/Desktop/JUCE/modules/juce_dsp";
+			sourceTree = "<absolute>";
 		};
 		0F4D2757C2DF98BC103771EB = {
 			isa = PBXFileReference;
@@ -235,11 +246,11 @@
 			path = System/Library/Frameworks/OpenGL.framework;
 			sourceTree = SDKROOT;
 		};
-		5A61233C28D29176C27E2C40 = {
+		546AD650656B5BD58947B102 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
-			name = "include_juce_gui_extra.mm";
-			path = "../../JuceLibraryCode/include_juce_gui_extra.mm";
+			name = "include_juce_audio_plugin_client_AU_2.mm";
+			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
 		8108A46D668296B43FB719FB = {
@@ -263,11 +274,11 @@
 			path = "Bruce A2.app";
 			sourceTree = "BUILT_PRODUCTS_DIR";
 		};
-		546AD650656B5BD58947B102 = {
+		5A61233C28D29176C27E2C40 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
-			name = "include_juce_audio_plugin_client_AU_2.mm";
-			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm";
+			name = "include_juce_gui_extra.mm";
+			path = "../../JuceLibraryCode/include_juce_gui_extra.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
 		5B5577D8655A6503B1B2B901 = {
@@ -459,6 +470,13 @@
 			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp";
 			sourceTree = "SOURCE_ROOT";
 		};
+		DA1ED153E7126C0170B15E77 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			name = "include_juce_dsp.mm";
+			path = "../../JuceLibraryCode/include_juce_dsp.mm";
+			sourceTree = "SOURCE_ROOT";
+		};
 		DBBA8F3CE66593935B7543A2 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -630,6 +648,7 @@
 				D22672934F5976DAB72C22DA,
 				DE0F05A64077328FBA3B4072,
 				EC76F2253554C57E31AB599B,
+				0B8F62A4FA3D906D8896E646,
 				E41084A85C92FA7876C05590,
 				EFEFDBDE49D94162E9FF0716,
 				B216BA489B7DACE579FDD950,
@@ -658,6 +677,7 @@
 				7600EAEB3BDE3C74B2F7D685,
 				70F8C108F461EFB4C4207D3A,
 				6265C11ADEEC7C79D53BEED1,
+				DA1ED153E7126C0170B15E77,
 				F46617D931D193E58315B2EF,
 				E6657B493346DBD3658A5727,
 				BCF1641C50CCAA56AE23E943,
@@ -1479,6 +1499,7 @@
 				E5F9E5F679210C4689C825BC,
 				226BF86EF8F1432AC95859D1,
 				5337F4EF2278492C7CD66C7C,
+				F7FE3ED8C58E0FA40D3038B7,
 				909A0CB14D060D60938DD32B,
 				F1525CC14AADFE6CCC3AA1D9,
 				DBC5982786653DC2EA776D47,

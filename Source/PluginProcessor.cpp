@@ -29,6 +29,7 @@ BruceA2AudioProcessor::BruceA2AudioProcessor()
     angleDelta = 0.0f;
     sinFreq = 0.0f;
     
+    
 }
 
 BruceA2AudioProcessor::~BruceA2AudioProcessor()
@@ -110,6 +111,11 @@ void BruceA2AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
     currentSampleRate = sampleRate;
     sinFreq= 1.0f;
     updateAngleDelta();
+    mixLevel.reset(sampleRate,0.05f);
+    mixLevel.setTargetValue(0.15f);
+    mixLevel = 0.15f;
+    
+    gain.setGainDecibels(0.0f);
     
     String message;
     message<< "Preparing to play..." << newLine;
@@ -182,22 +188,28 @@ void BruceA2AudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer
         // ..do something to each audio sample....
         for ( int sample = 0; sample < buffer.getNumSamples(); ++sample)
         {
-            auto currentSinSample = (float) std::sin(currentAngle);
+            auto currentSinsample = (float) std::sin(currentAngle);
             currentAngle += angleDelta;
             wetData[sample] = wetData[sample] * 0.5f;//currentSinsample;
             
             auto shapedSample = jlimit((float) -0.8, (float) 0.8, wetData[sample]);
             wetData[sample] = shapedSample;
             
-        
+         
             
             
             channelData[sample] = channelData[sample] * 0.3f + wetData[sample] * 0.7f;
             channelData[sample] = jlimit ((float) -0.1, (float) 0.1, wetData[sample]);
             
+            channelData[sample] = channelData[sample] * (0.25f - mixLevel.getNextValue()) + wetData[sample] * mixLevel.getNextValue();
+            
         }
     }
+    dsp::AudioBlock<float> output(buffer);
+    gain.process(dsp::ProcessContextReplacing<float> (output));
+
 }
+
 
 //==============================================================================
 bool BruceA2AudioProcessor::hasEditor() const

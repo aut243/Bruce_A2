@@ -16,7 +16,7 @@
 //==============================================================================
 /**
 */
-class BruceA2AudioProcessorEditor  : public AudioProcessorEditor
+class BruceA2AudioProcessorEditor  : public AudioProcessorEditor, Slider::Listener
 {
 public:
     BruceA2AudioProcessorEditor (BruceA2AudioProcessor&);
@@ -26,9 +26,24 @@ public:
     void paint (Graphics&) override;
     void resized() override;
 
+    Random random;
+    
 private:
+    
+//creating slider. 
+    Slider volSlider;
+    Slider freqSlider;
+    
+    Label freqLabel;
+    Label volLabel;
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
+    
+    void sliderValueChanged(Slider* slider) override;
+    
+    //BYE!!!
+    
+    
     BruceA2AudioProcessor& processor;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BruceA2AudioProcessorEditor)
