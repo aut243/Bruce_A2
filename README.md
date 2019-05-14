@@ -2,4 +2,4 @@
 
 Image insert example: 
 
-![A2Screen]
+![alt text](A2Screen.png)
