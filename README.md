@@ -2,4 +2,4 @@
 
 Image insert example: 
 
-![A2 screenshot]
+![A2Screen]
